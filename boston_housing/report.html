@@ -12461,8 +12461,7 @@ On other hand, when the model is tested with max depth 10, the model has low bia
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>Grid search allows to select the best possible model for prediction by allowing us to specify which of those parameters we want to change, their corresponding rangues and the function score to be optimised. It then gives us a combination of values for those parameters that optimize the scoring function by searching each of those models.
-Grid search performs hyperparameter optimization by selecting a grid of values, evaluating them and returning the result. This parameter sweep functionality of grid search can optimise a learning algorithm.</p>
+<p>Is a technique that allows to define a grid of parameters that will be searched using K-fold cross-validation.</p>
 
 </div>
 </div>
@@ -12489,9 +12488,7 @@ Grid search performs hyperparameter optimization by selecting a grid of values, 
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
 <ul>
-<li>K-fold cross validation is a technique that involves the division of data into k subsets. The hold out method is repeated k times with each of the subsets serving as the testing data one by one with the remaining k-1 subsets as training data. The average error across all k trials is computed.</li>
-<li>The advantage of using cross validation is that is allows maximum possible use of data as each of the data subsets serves as both testing and training data equal number of times. 
-We can use gridsearch alonside cross validation, as we don't just want to select the best model, but also have an accurate estimate of how well it responds to unknown data.</li>
+<li>Dataset is split into K-folds, of equal size.</li>
 </ul>
 
 </div>
