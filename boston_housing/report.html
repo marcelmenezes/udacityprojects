@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>boston_housing MARCEL</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>boston_housing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12487,7 +12487,13 @@ On other hand, when the model is tested with max depth 10, the model has low bia
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
-<p>K-fold cross validation involves the division of data into "k" subsets. The hold out method is repeated "k" times with each of the subsets serving as the testing data one by one with the remaining k-1 subsets as training data. The average error across all k trials is computed. Each fold acts as the testing set 1 time, and acts as the training set K-1 times.</p>
+<p>K-fold cross validation involves <strong>the division of the training data subset</strong> into "k" subsets.</p>
+<p>The hold out method is repeated "k" times with each of the subsets serving as the testing data one by one with the remaining k-1 subsets as training data. The average error across all k trials is computed. Each fold acts as the testing set 1 time, and acts as the training set K-1 times.</p>
+<p><strong>Difference between Testing Set and Validation Set:</strong></p>
+<ul>
+<li>A Validation Dataset is a subset of data used to provide an unbiased evaluation of a model fit on the training dataset while tuning model hyperparameters. The evaluation becomes more biased as skill on the validation dataset is incorporated into the model configuration.</li>
+<li>A Test Dataset is a subset of data used to provide an unbiased evaluation of a final model fit on the training dataset.</li>
+</ul>
 <p>Advantage of k-fold cross validation:</p>
 <ul>
 <li>It allows maximum possible use of data as each of the data subsets serves as both testing and training data equal number of times.</li>
