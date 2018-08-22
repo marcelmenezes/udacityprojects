@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>boston_housing</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>boston_housing MARCEL</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -12163,8 +12163,8 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong></p>
-<p>R-squared is a measure that shows how the fitted regression line is close to the real data. So, the 92.3% of the R^2 shows that the model explains at leas 92% of the variability of the response data arount that mean. So, it is a good calculation of the target variable.</p>
+<p><strong>Answer:</strong> R^2 = 92.3%</p>
+<p>R-squared is a measure that shows how the fitted regression line is close to the real data. So, the 92.3% of the R^2 shows that the model explains 92.3% of the variability of the response data around that mean. It is a good calculation of the target variable (it seems to be high).</p>
 
 </div>
 </div>
@@ -12487,9 +12487,14 @@ On other hand, when the model is tested with max depth 10, the model has low bia
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer: </strong></p>
+<p>K-fold cross validation involves the division of data into "k" subsets. The hold out method is repeated "k" times with each of the subsets serving as the testing data one by one with the remaining k-1 subsets as training data. The average error across all k trials is computed. Each fold acts as the testing set 1 time, and acts as the training set K-1 times.</p>
+<p>Advantage of k-fold cross validation:</p>
 <ul>
-<li>Dataset is split into K-folds, of equal size.</li>
+<li>It allows maximum possible use of data as each of the data subsets serves as both testing and training data equal number of times.</li>
+<li>More reliable estimate of out-of-sample performance than train/test split.</li>
+<li>Reduce the variance of a single trial of a train/test split.</li>
 </ul>
+<p>In summary, without k-fold cross-validation the risk is higher that grid search will select hyper-parameter value sets that perform very well on a specific train-test split, but poorly otherwise.</p>
 
 </div>
 </div>
@@ -12524,7 +12529,7 @@ On other hand, when the model is tested with max depth 10, the model has low bia
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># TODO: Import &#39;make_scorer&#39;, &#39;DecisionTreeRegressor&#39;, and &#39;GridSearchCV&#39;</span>
@@ -12544,7 +12549,7 @@ On other hand, when the model is tested with max depth 10, the model has low bia
     <span class="n">regressor</span> <span class="o">=</span> <span class="n">DecisionTreeRegressor</span><span class="p">()</span>
 
     <span class="c1"># TODO: Create a dictionary for the parameter &#39;max_depth&#39; with a range from 1 to 10</span>
-    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)}</span>
+    <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;max_depth&quot;</span><span class="p">:</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)}</span>
 
     <span class="c1"># TODO: Transform &#39;performance_metric&#39; into a scoring function using &#39;make_scorer&#39; </span>
     <span class="n">scoring_fnc</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">performance_metric</span><span class="p">)</span>
@@ -12890,6 +12895,7 @@ Range in prices: $69,044.61
 <li>Data from rural city can have other features that are better than features specific of a urban data.</li>
 <li>Is not fair to judge the price of an individual home based on the characteristics of the entire neighborhood, because that house can also have its own features that can make the price higher or lower, like the total number of rooms.</li>
 </ul>
+<p>The constructed model should not be used in a real-world setting, because crucial features are missing, such as the age of the house, crime rate in the neighborhood, and accessibility by transportation routes.</p>
 
 </div>
 </div>
